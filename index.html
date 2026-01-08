@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXO IA Talentos | Mentorias de Carreira e Vida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #f8fafc;
+            --color-bg-elevated: #ffffff;
+            --color-bg-card: #ffffff;
+            --color-bg-dark: #0f172a;
+            --color-border: #e2e8f0;
+            --color-border-subtle: #f1f5f9;
+            --color-text: #0f2744;
+            --color-text-muted: #64748b;
+            --color-text-subtle: #94a3b8;
+            --color-text-light: #ffffff;
+            --color-accent: #0e7490;
+            --color-accent-hover: #0891b2;
+            --color-accent-light: #22d3ee;
+            --color-accent-muted: rgba(14, 116, 144, 0.1);
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-highlight: #e0f2fe;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --shadow-soft: 0 2px 12px rgba(0,0,0,0.04);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-elevated: 0 12px 48px rgba(0,0,0,0.08);
+            --transition-fast: 0.15s ease;
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border-subtle);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo-icon {
+            width: 44px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nav-logo-icon .circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2.5px solid;
+            position: absolute;
+        }
+
+        .nav-logo-icon .circle-1 {
+            border-color: #64748b;
+            left: 0;
+            z-index: 1;
+        }
+
+        .nav-logo-icon .circle-2 {
+            border-color: #22d3ee;
+            left: 14px;
+            z-index: 2;
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo-text .brand-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--color-text);
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-logo-text .brand-name .ia {
+            color: var(--color-text);
+        }
+
+        .nav-logo-text .brand-tagline {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #22d3ee;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        .nav-cta {
+            background: var(--color-accent) !important;
+            color: white !important;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent-hover) !important;
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 72px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse at top right, var(--color-highlight) 0%, transparent 60%);
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
+        }
+
+        .hero-eyebrow svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: var(--color-text);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(14, 116, 144, 0.25);
+        }
+
+        .btn-secondary {
+            background: var(--color-bg-elevated);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-bg);
+            border-color: var(--color-accent);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-text-muted);
+            padding: 12px 20px;
+        }
+
+        .btn-ghost:hover {
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+
+        .section-header.center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            color: var(--color-text-muted);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        /* Fit Section */
+        .fit-section {
+            background: var(--color-bg);
+        }
+
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .fit-card {
+            background: var(--color-bg-elevated);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--color-border-subtle);
+        }
+
+        .fit-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .fit-card h3 svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .fit-yes h3 { color: var(--color-success); }
+        .fit-no h3 { color: var(--color-text-subtle); }
+
+        .fit-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .fit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        .fit-list li svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .fit-yes .fit-list li svg { color: var(--color-success); }
+        .fit-no .fit-list li svg { color: var(--color-text-subtle); }
+
+        /* Trails Section */
+        .trails-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .trail-card {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform var(--transition-smooth);
+        }
+
+        .trail-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .trail-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .trail-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--color-accent-muted);
+            color: var(--color-accent);
+            border-radius: 50%;
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .trail-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .trail-card p {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .trail-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .trail-topic {
+            font-size: 0.75rem;
+            color: var(--color-accent);
+            background: var(--color-accent-muted);
+            padding: 6px 12px;
+            border-radius: 100px;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border-subtle);
+            border-bottom: 1px solid var(--color-border-subtle);
+        }
+
+        .quiz-container {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .quiz-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .quiz-header p {
+            color: var(--color-text-muted);
+        }
+
+        .quiz-progress {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 32px;
+        }
+
+        .quiz-progress-step {
+            flex: 1;
+            height: 4px;
+            background: var(--color-border);
+            border-radius: 2px;
+            transition: background var(--transition-smooth);
+        }
+
+        .quiz-progress-step.active {
+            background: var(--color-accent);
+        }
+
+        .quiz-question {
+            display: none;
+        }
+
+        .quiz-question.active {
+            display: block;
+            animation: fadeSlideIn 0.4s ease;
+        }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .quiz-question h3 {
+            font-size: 1.0625rem;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .quiz-option:hover {
+            border-color: var(--color-accent);
+            background: var(--color-accent-muted);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--color-accent);
+            background: var(--color-accent-muted);
+        }
+
+        .quiz-option-radio {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--color-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all var(--transition-fast);
+        }
+
+        .quiz-option.selected .quiz-option-radio {
+            border-color: var(--color-accent);
+        }
+
+        .quiz-option.selected .quiz-option-radio::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .quiz-option span {
+            font-size: 0.9375rem;
+        }
+
+        .quiz-result {
+            display: none;
+            text-align: center;
+        }
+
+        .quiz-result.active {
+            display: block;
+            animation: fadeSlideIn 0.5s ease;
+        }
+
+        .quiz-result-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--color-accent-muted);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .quiz-result-icon svg {
+            width: 36px;
+            height: 36px;
+            color: var(--color-accent);
+        }
+
+        .quiz-result h3 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            margin-bottom: 8px;
+        }
+
+        .quiz-result-intro {
+            color: var(--color-text-muted);
+            margin-bottom: 24px;
+        }
+
+        .quiz-result-box {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin: 16px 0;
+            text-align: left;
+        }
+
+        .quiz-result-box h4 {
+            font-size: 0.8125rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .quiz-result-box p {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .quiz-restart {
+            margin-top: 24px;
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            cursor: pointer;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+        }
+
+        .quiz-restart:hover {
+            color: var(--color-text);
+        }
+
+        /* Packages Section */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .package-card {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .package-card.featured {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-card);
+        }
+
+        .package-card.featured::before {
+            content: 'Mais escolhido';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: white;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 16px;
+            border-radius: 100px;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .package-header {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--color-border-subtle);
+        }
+
+        .package-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .package-sessions {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        .package-price {
+            margin: 16px 0 8px;
+        }
+
+        .package-price strong {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-text);
+        }
+
+        .package-price span {
+            color: var(--color-text-subtle);
+            font-size: 0.875rem;
+        }
+
+        .package-desc {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .package-features li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--color-success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .package-bonus {
+            background: var(--color-accent-muted);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            margin-bottom: 24px;
+        }
+
+        .package-bonus-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            margin-bottom: 4px;
+        }
+
+        .package-bonus p {
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+        }
+
+        /* MEI Method Section */
+        .mei-section {
+            background: var(--color-bg);
+        }
+
+        .mei-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .mei-visual {
+            position: relative;
+        }
+
+        .mei-circle {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mei-ring {
+            position: absolute;
+            border: 2px solid var(--color-border);
+            border-radius: 50%;
+        }
+
+        .mei-ring-outer {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .mei-ring-middle {
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+        }
+
+        .mei-ring-inner {
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mei-ring-inner span {
+            color: white;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .mei-label {
+            position: absolute;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .mei-label-clarity {
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .mei-label-habits {
+            bottom: 20%;
+            left: -10px;
+        }
+
+        .mei-label-exec {
+            bottom: 20%;
+            right: -20px;
+        }
+
+        .mei-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        .mei-content > p {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .mei-pillars {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mei-pillar {
+            display: flex;
+            gap: 16px;
+        }
+
+        .mei-pillar-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .mei-pillar-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-accent);
+        }
+
+        .mei-pillar h4 {
+            font-size: 0.9375rem;
+            margin-bottom: 4px;
+        }
+
+        .mei-pillar p {
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+        }
+
+        .mei-indicators {
+            margin-top: 32px;
+            padding: 20px;
+            background: var(--color-bg-elevated);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+        }
+
+        .mei-indicators h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-subtle);
+            margin-bottom: 12px;
+        }
+
+        .mei-indicator-list {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .mei-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+
+        .mei-indicator-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        /* Deliverables Section */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .deliverable-item {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            transition: all var(--transition-fast);
+        }
+
+        .deliverable-item:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .deliverable-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--color-accent-muted);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .deliverable-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--color-accent);
+        }
+
+        .deliverable-item h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .deliverable-item p {
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Social Proof */
+        .proof-section {
+            background: var(--color-bg);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .case-card {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+        }
+
+        .case-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-subtle);
+            margin-bottom: 16px;
+        }
+
+        .case-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.0625rem;
+            margin-bottom: 12px;
+        }
+
+        .case-card p {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .case-outcome {
+            background: var(--color-accent-muted);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+
+        .case-outcome-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            margin-bottom: 6px;
+        }
+
+        .case-outcome p {
+            margin: 0;
+            font-size: 0.875rem;
+        }
+
+        .testimonials {
+            margin-top: 48px;
+        }
+
+        .testimonials h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.9375rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 0.8125rem;
+            color: var(--color-text-subtle);
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-family: var(--font-body);
+            transition: color var(--transition-fast);
+        }
+
+        .faq-question:hover {
+            color: var(--color-accent);
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-text-subtle);
+            transition: transform var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-smooth);
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Important Notice */
+        .notice-box {
+            background: linear-gradient(135deg, var(--color-highlight) 0%, var(--color-bg) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-top: 48px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .notice-box svg {
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .notice-box h4 {
+            font-size: 0.9375rem;
+            margin-bottom: 8px;
+        }
+
+        .notice-box p {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--color-bg);
+        }
+
+        .cta-box {
+            background: var(--color-bg-dark);
+            border: none;
+            border-radius: var(--radius-xl);
+            padding: 64px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-box h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .cta-box > p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.0625rem;
+            margin-bottom: 32px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .cta-secondary-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cta-secondary-links a,
+        .cta-secondary-links button {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color var(--transition-fast);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .cta-secondary-links a:hover,
+        .cta-secondary-links button:hover {
+            color: #ffffff;
+        }
+
+        .cta-secondary-links svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--color-border-subtle);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-brand .nav-logo {
+            font-size: 1.125rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.8125rem;
+            color: var(--color-text-subtle);
+            font-style: italic;
+        }
+
+        .footer-legal {
+            text-align: right;
+        }
+
+        .footer-legal p {
+            font-size: 0.75rem;
+            color: var(--color-text-subtle);
+            margin-bottom: 4px;
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 12px;
+        }
+
+        .footer-badge {
+            font-size: 0.625rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-subtle);
+            background: var(--color-bg);
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-accent);
+            color: var(--color-text);
+            padding: 14px 24px;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            z-index: 1002;
+            opacity: 0;
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-success);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .trails-grid,
+            .packages-grid,
+            .deliverables-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mei-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .mei-visual {
+                order: -1;
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--color-bg);
+                border-bottom: 1px solid var(--color-border);
+                flex-direction: column;
+                padding: 16px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .fit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-container {
+                padding: 32px 24px;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .notice-box {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                text-align: center;
+            }
+
+            .footer-badges {
+                justify-content: center;
+            }
+        }
+
+        /* Accessibility */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="https://www.nexoiatalentos.com.br" target="_blank" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <span class="circle circle-1"></span>
+                    <span class="circle circle-2"></span>
+                </div>
+                <div class="nav-logo-text">
+                    <span class="brand-name">NEXO <span class="ia">IA</span></span>
+                    <span class="brand-tagline">Talentos</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#visao-rapida">Visão Rápida</a></li>
+                <li><a href="#trilhas">Trilhas</a></li>
+                <li><a href="#metodo">Método</a></li>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#provas">Provas</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="nav-cta">Agendar</a></li>
+            </ul>
+            <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="visao-rapida">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Mentorias de carreira e vida
+                    </div>
+                    <h1>Destravar <em>clareza</em>, energia e execução. Com método e IA prática.</h1>
+                    <p class="hero-subtitle">
+                        Não é terapia. Não é coaching motivacional. É mentoria aplicada com método MEI (Clareza, Hábitos, Execução) e ferramentas de IA para sair do travamento e agir com propósito.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="btn btn-primary">
+                            Agendar sessão de clareza
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#trilhas" class="btn btn-secondary">
+                            Ver trilhas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fit Section -->
+        <section class="fit-section">
+            <div class="container">
+                <div class="fit-grid">
+                    <div class="fit-card fit-yes">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Para quem é
+                        </h3>
+                        <ul class="fit-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Sente que está no "piloto automático" e quer retomar o leme
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Quer clareza sobre carreira, transições ou próximos passos
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Busca equilíbrio entre vida pessoal e profissional
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Quer aprender a usar IA de forma prática no dia a dia
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Valoriza método e acompanhamento, não só motivação
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fit-card fit-no">
+                        <h3>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="15" y1="9" x2="9" y2="15"/>
+                                <line x1="9" y1="9" x2="15" y2="15"/>
+                            </svg>
+                            Talvez não seja para você se...
+                        </h3>
+                        <ul class="fit-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Precisa de acompanhamento clínico (ansiedade, depressão, traumas)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Busca respostas prontas sem disposição para refletir e agir
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Não tem 2-3 horas por semana para dedicar ao processo
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                Espera "coaching de palco" com frases de efeito
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trails Section -->
+        <section id="trilhas">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label">Escolha seu caminho</span>
+                    <h2 class="section-title">Três trilhas, um objetivo: você no comando</h2>
+                    <p class="section-subtitle">Cada trilha pode ser combinada ou seguida individualmente. O importante é começar por onde faz mais sentido para você agora.</p>
+                </div>
+
+                <div class="trails-grid">
+                    <div class="trail-card">
+                        <span class="trail-number">1</span>
+                        <h3>Vida & Trabalho</h3>
+                        <p>Para quem sente que está esgotando energia em coisas erradas. Foco em limites, prioridades e sentido.</p>
+                        <div class="trail-topics">
+                            <span class="trail-topic">Limites</span>
+                            <span class="trail-topic">Energia</span>
+                            <span class="trail-topic">Propósito</span>
+                            <span class="trail-topic">Equilíbrio</span>
+                        </div>
+                    </div>
+
+                    <div class="trail-card">
+                        <span class="trail-number">2</span>
+                        <h3>Carreira & Posicionamento</h3>
+                        <p>Para quem quer se reposicionar no mercado com clareza. Narrativa, LinkedIn, portfólio, networking estratégico.</p>
+                        <div class="trail-topics">
+                            <span class="trail-topic">Narrativa</span>
+                            <span class="trail-topic">LinkedIn</span>
+                            <span class="trail-topic">Portfólio</span>
+                            <span class="trail-topic">Networking</span>
+                        </div>
+                    </div>
+
+                    <div class="trail-card">
+                        <span class="trail-number">3</span>
+                        <h3>IA & ChatGPT na Prática</h3>
+                        <p>Para quem quer usar IA como ferramenta real de produtividade. Playbooks, prompts, fluxos e agentes.</p>
+                        <div class="trail-topics">
+                            <span class="trail-topic">Prompts</span>
+                            <span class="trail-topic">Playbooks</span>
+                            <span class="trail-topic">Automação</span>
+                            <span class="trail-topic">Agentes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-section" id="triagem">
+            <div class="container">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h2>Descubra sua trilha em 1 minuto</h2>
+                        <p>6 perguntas simples para uma recomendação personalizada</p>
+                    </div>
+                    
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-step active" data-step="1"></div>
+                        <div class="quiz-progress-step" data-step="2"></div>
+                        <div class="quiz-progress-step" data-step="3"></div>
+                        <div class="quiz-progress-step" data-step="4"></div>
+                        <div class="quiz-progress-step" data-step="5"></div>
+                        <div class="quiz-progress-step" data-step="6"></div>
+                    </div>
+
+                    <div id="quizQuestions">
+                        <!-- Question 1 -->
+                        <div class="quiz-question active" data-question="1">
+                            <h3>O que mais está tirando seu sono ultimamente?</h3>
+                            <div class="quiz-options">
+                                <label class="quiz-option" data-value="energia">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Estou exausto(a) e sem energia para o que importa</span>
+                                </label>
+                                <label class="quiz-option" data-value="carreira">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Não sei qual próximo passo dar na carreira</span>
+                                </label>
+                                <label class="quiz-option" data-value="produtividade">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Sinto que estou ficando para trás com as novas tecnologias</span>
+                                </label>
+                                <label class="quiz-option" data-value="tudo">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Um pouco de tudo isso junto</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="quiz-question" data-question="2">
+                            <h3>Como você descreveria sua relação com trabalho hoje?</h3>
+                            <div class="quiz-options">
+                                <label class="quiz-option" data-value="desequilibrio">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Trabalho demais e vivo de menos</span>
+                                </label>
+                                <label class="quiz-option" data-value="estagnado">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Estagnado – faço o mínimo e não vejo perspectiva</span>
+                                </label>
+                                <label class="quiz-option" data-value="transicao">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Em transição – estou mudando ou pensando em mudar</span>
+                                </label>
+                                <label class="quiz-option" data-value="ok">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Está OK, mas quero potencializar</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="quiz-question" data-question="3">
+                            <h3>Quando pensa em IA (ChatGPT, etc.), qual é sua situação?</h3>
+                            <div class="quiz-options">
+                                <label class="quiz-option" data-value="nunca">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Nunca usei ou usei pouco e não entendi direito</span>
+                                </label>
+                                <label class="quiz-option" data-value="basico">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Uso para coisas básicas, mas sei que posso fazer mais</span>
+                                </label>
+                                <label class="quiz-option" data-value="avancado">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Já uso bem, mas quero criar fluxos e automações</span>
+                                </label>
+                                <label class="quiz-option" data-value="outro">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>IA não é minha prioridade agora</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="quiz-question" data-question="4">
+                            <h3>Se pudesse resolver UMA coisa nas próximas 4 semanas, seria:</h3>
+                            <div class="quiz-options">
+                                <label class="quiz-option" data-value="clareza">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Ter clareza sobre o que eu realmente quero</span>
+                                </label>
+                                <label class="quiz-option" data-value="posicionamento">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Melhorar meu posicionamento e visibilidade profissional</span>
+                                </label>
+                                <label class="quiz-option" data-value="ferramentas">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Aprender ferramentas práticas para ser mais produtivo</span>
+                                </label>
+                                <label class="quiz-option" data-value="equilibrio">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Recuperar energia e equilíbrio na vida</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="quiz-question" data-question="5">
+                            <h3>Quantas horas por semana você pode dedicar a este processo?</h3>
+                            <div class="quiz-options">
+                                <label class="quiz-option" data-value="pouco">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>1-2 horas (só o essencial)</span>
+                                </label>
+                                <label class="quiz-option" data-value="medio">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>2-4 horas (tenho alguma margem)</span>
+                                </label>
+                                <label class="quiz-option" data-value="intenso">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>4+ horas (quero me dedicar de verdade)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="quiz-question" data-question="6">
+                            <h3>O que mais te atrairia em uma mentoria?</h3>
+                            <div class="quiz-options">
+                                <label class="quiz-option" data-value="profundidade">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Conversas profundas sobre propósito e sentido</span>
+                                </label>
+                                <label class="quiz-option" data-value="pratico">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Ferramentas práticas e templates prontos</span>
+                                </label>
+                                <label class="quiz-option" data-value="estrategico">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Planejamento estratégico de carreira</span>
+                                </label>
+                                <label class="quiz-option" data-value="misto">
+                                    <span class="quiz-option-radio"></span>
+                                    <span>Uma mistura equilibrada de tudo isso</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Result -->
+                    <div class="quiz-result" id="quizResult">
+                        <div class="quiz-result-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 id="resultTitle">Sua recomendação personalizada</h3>
+                        <p class="quiz-result-intro" id="resultIntro">Baseado nas suas respostas, aqui está o que faz mais sentido para você:</p>
+                        
+                        <div class="quiz-result-box">
+                            <h4>Trilha recomendada</h4>
+                            <p id="resultTrail">...</p>
+                        </div>
+                        
+                        <div class="quiz-result-box">
+                            <h4>Foco das primeiras 4 semanas</h4>
+                            <p id="resultFocus">...</p>
+                        </div>
+
+                        <a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="btn btn-primary" style="margin-top: 24px;">
+                            Agendar sessão de clareza (grátis)
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        
+                        <button class="quiz-restart" onclick="restartQuiz()">Refazer triagem</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEI Method Section -->
+        <section class="mei-section" id="metodo">
+            <div class="container">
+                <div class="mei-grid">
+                    <div class="mei-visual">
+                        <div class="mei-circle">
+                            <div class="mei-ring mei-ring-outer"></div>
+                            <div class="mei-ring mei-ring-middle"></div>
+                            <div class="mei-ring mei-ring-inner">
+                                <span>MEI</span>
+                            </div>
+                            <span class="mei-label mei-label-clarity">Clareza</span>
+                            <span class="mei-label mei-label-habits">Hábitos</span>
+                            <span class="mei-label mei-label-exec">Execução</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mei-content">
+                        <span class="section-label">O Método</span>
+                        <h3>MEI: Método de Equilíbrio Integrado</h3>
+                        <p>Não usamos "fórmulas mágicas" nem frases motivacionais. O MEI é um framework prático que conecta autoconhecimento com ação. Medimos progresso, não só intenções.</p>
+                        
+                        <div class="mei-pillars">
+                            <div class="mei-pillar">
+                                <div class="mei-pillar-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="12" y1="16" x2="12" y2="12"/>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Clareza</h4>
+                                    <p>Entender o que você quer, o que drena e o que energiza.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mei-pillar">
+                                <div class="mei-pillar-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Hábitos</h4>
+                                    <p>Construir rotinas sustentáveis que suportam seus objetivos.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mei-pillar">
+                                <div class="mei-pillar-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Execução</h4>
+                                    <p>Transformar intenção em ação com acompanhamento real.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mei-indicators">
+                            <h4>Indicadores que acompanhamos (0-10)</h4>
+                            <div class="mei-indicator-list">
+                                <div class="mei-indicator">
+                                    <span class="mei-indicator-dot"></span>
+                                    Clareza
+                                </div>
+                                <div class="mei-indicator">
+                                    <span class="mei-indicator-dot"></span>
+                                    Energia
+                                </div>
+                                <div class="mei-indicator">
+                                    <span class="mei-indicator-dot"></span>
+                                    Foco
+                                </div>
+                                <div class="mei-indicator">
+                                    <span class="mei-indicator-dot"></span>
+                                    Progresso
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="pacotes">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label">Pacotes</span>
+                    <h2 class="section-title">Escolha a intensidade do acompanhamento</h2>
+                    <p class="section-subtitle">Todos os pacotes incluem acesso às 3 trilhas. A diferença está na profundidade e frequência.</p>
+                </div>
+
+                <div class="packages-grid">
+                    <!-- Package 1 -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-name">Essencial</h3>
+                            <p class="package-sessions">4 sessões · ~1 mês</p>
+                            <div class="package-price">
+                                <strong>[VALOR]</strong>
+                                <span>ou [X]x de [Y]</span>
+                            </div>
+                        </div>
+                        <p class="package-desc">Para quem quer um pontapé inicial estruturado. Ideal para uma questão específica ou diagnóstico.</p>
+                        <ul class="package-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                4 sessões de 60 min (quinzenal)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Diagnóstico 360 enxuto
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Plano de ação inicial
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Suporte assíncrono básico
+                            </li>
+                        </ul>
+                        <div class="package-bonus">
+                            <p class="package-bonus-label">Bônus</p>
+                            <p>10 prompts essenciais de produtividade</p>
+                        </div>
+                        <a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                            Começar
+                        </a>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="package-card featured">
+                        <div class="package-header">
+                            <h3 class="package-name">Intensivo</h3>
+                            <p class="package-sessions">8 sessões · ~2 meses</p>
+                            <div class="package-price">
+                                <strong>[VALOR]</strong>
+                                <span>ou [X]x de [Y]</span>
+                            </div>
+                        </div>
+                        <p class="package-desc">Para quem quer uma transformação real. Tempo suficiente para criar novos padrões e ver resultados.</p>
+                        <ul class="package-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                8 sessões de 60 min (semanal)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Diagnóstico 360 completo
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Plano 30/60/90 dias
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Suporte WhatsApp prioritário
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Dossiê de posicionamento
+                            </li>
+                        </ul>
+                        <div class="package-bonus">
+                            <p class="package-bonus-label">Bônus</p>
+                            <p>Biblioteca de 50+ prompts + templates de carreira</p>
+                        </div>
+                        <a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Quero esse
+                        </a>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-name">Acompanhamento</h3>
+                            <p class="package-sessions">12 sessões · ~3 meses</p>
+                            <div class="package-price">
+                                <strong>[VALOR]</strong>
+                                <span>ou [X]x de [Y]</span>
+                            </div>
+                        </div>
+                        <p class="package-desc">Para quem quer profundidade e sustentabilidade. Mudança de padrões de longo prazo.</p>
+                        <ul class="package-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                12 sessões de 60 min
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Tudo do Intensivo +
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Roteiros de conversas difíceis
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Revisão trimestral de progresso
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Acesso vitalício à biblioteca
+                            </li>
+                        </ul>
+                        <div class="package-bonus">
+                            <p class="package-bonus-label">Bônus</p>
+                            <p>Workshop exclusivo de IA + sessão bônus de follow-up</p>
+                        </div>
+                        <a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                            Saber mais
+                        </a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn btn-ghost" onclick="copyWhatsAppMessage()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                        Copiar mensagem para WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section style="background: var(--color-bg);" id="entregaveis">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label">Entregáveis</span>
+                    <h2 class="section-title">O que você leva além das sessões</h2>
+                </div>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable-item">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h4>Diagnóstico 360</h4>
+                        <p>Mapeamento de onde você está em clareza, energia, carreira e habilidades.</p>
+                    </div>
+
+                    <div class="deliverable-item">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <h4>Plano 30/60/90</h4>
+                        <p>Roteiro de ação com metas claras e checkpoints para acompanhamento.</p>
+                    </div>
+
+                    <div class="deliverable-item">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h4>Biblioteca de Prompts</h4>
+                        <p>Coleção personalizada de prompts para produtividade, carreira e vida.</p>
+                    </div>
+
+                    <div class="deliverable-item">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                        </div>
+                        <h4>Dossiê de Posicionamento</h4>
+                        <p>Documento com sua narrativa, diferenciais e estratégia de visibilidade.</p>
+                    </div>
+
+                    <div class="deliverable-item">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h4>Roteiros de Conversas</h4>
+                        <p>Scripts para negociações, feedback e conversas difíceis no trabalho.</p>
+                    </div>
+
+                    <div class="deliverable-item">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20V10"/>
+                                <path d="M18 20V4"/>
+                                <path d="M6 20v-4"/>
+                            </svg>
+                        </div>
+                        <h4>Relatório de Progresso</h4>
+                        <p>Evolução dos seus indicadores MEI ao longo do acompanhamento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof Section -->
+        <section class="proof-section" id="provas">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Resultados</span>
+                    <h2 class="section-title">Histórias de quem já passou pelo processo</h2>
+                </div>
+
+                <div class="proof-grid">
+                    <div class="case-card">
+                        <span class="case-label">Exemplo ilustrativo</span>
+                        <h4>Gerente em transição de carreira</h4>
+                        <p>Chegou esgotado após 12 anos na mesma empresa, sem saber se queria continuar na área. Em 8 semanas, mapeou seus valores, reconstruiu a narrativa profissional e fez uma transição para uma startup com 40% de aumento.</p>
+                        <div class="case-outcome">
+                            <p class="case-outcome-label">Resultado em 8 semanas</p>
+                            <p>Clareza sobre transição + nova posição alinhada a valores</p>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <span class="case-label">Exemplo ilustrativo</span>
+                        <h4>Profissional autônoma em sobrecarga</h4>
+                        <p>Trabalhava 60h/semana, sem tempo para família e com energia no limite. Usou o MEI para redesenhar rotina, estabelecer limites com clientes e automatizar tarefas com IA. Reduziu carga para 40h mantendo faturamento.</p>
+                        <div class="case-outcome">
+                            <p class="case-outcome-label">Resultado em 12 semanas</p>
+                            <p>20h/semana recuperadas + equilíbrio restaurado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials">
+                    <h3>O que dizem sobre o processo</h3>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <blockquote>"[Depoimento placeholder – a ser substituído por depoimento real com autorização]"</blockquote>
+                            <p class="testimonial-author">— [Nome], [Cargo/Contexto]</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>"[Depoimento placeholder – a ser substituído por depoimento real com autorização]"</blockquote>
+                            <p class="testimonial-author">— [Nome], [Cargo/Contexto]</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>"[Depoimento placeholder – a ser substituído por depoimento real com autorização]"</blockquote>
+                            <p class="testimonial-author">— [Nome], [Cargo/Contexto]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Perguntas frequentes</span>
+                    <h2 class="section-title">Tire suas dúvidas</h2>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Isso é terapia?
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Não. Mentoria é um processo focado em ação, planejamento e desenvolvimento. Se você tem questões clínicas (ansiedade severa, depressão, traumas), recomendo fortemente buscar um psicólogo ou psiquiatra. Podemos trabalhar em paralelo, mas não substituo tratamento.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            E se eu estiver em pré-burnout ou muito esgotado(a)?
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Avaliamos isso na sessão inicial. Em alguns casos, o foco das primeiras semanas é justamente recuperar energia antes de qualquer planejamento. Mas se o quadro indicar necessidade clínica, vou sugerir que você busque apoio profissional adequado primeiro ou em paralelo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Preciso saber usar IA para fazer a mentoria?
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Não. A IA é uma ferramenta, não um pré-requisito. Se você quiser aprender, ótimo – temos uma trilha específica. Se não for sua prioridade, trabalhamos outras frentes. O método MEI funciona com ou sem tecnologia.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Quanto tempo preciso dedicar por semana?
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Além das sessões de 60 minutos, recomendo 1-2 horas por semana para reflexões, exercícios e ações práticas. Não é um curso passivo – é um processo de transformação que exige seu envolvimento ativo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            As conversas são confidenciais?
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Absolutamente. Tudo que conversamos é sigiloso. Não compartilho informações com empregadores, familiares ou qualquer terceiro. Quando uso IA para auxiliar análises, dados identificáveis não são enviados a sistemas externos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Posso mudar de pacote durante o processo?
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Sim. Se durante o Essencial você perceber que quer continuar, fazemos upgrade para Intensivo ou Acompanhamento com desconto proporcional. A ideia é você encontrar o ritmo que funciona.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <div>
+                        <h4>Nota importante sobre saúde mental</h4>
+                        <p>Mentoria não substitui acompanhamento psicológico ou psiquiátrico. Se você está passando por uma crise, ansiedade severa, depressão ou pensamentos de automutilação, procure ajuda profissional especializada. O CVV (188) oferece apoio 24h. Posso ajudar a encontrar os recursos certos para você.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cost of Inaction -->
+        <section style="padding: 48px 0; background: var(--color-bg);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; background: var(--color-bg-dark); border-radius: 24px; padding: 48px;">
+                    <h3 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 16px; color: #ffffff;">O custo de não agir</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9375rem; line-height: 1.7;">
+                        Cada mês no piloto automático é um mês a menos de energia, clareza e oportunidades. Não estou falando de urgência artificial – estou falando de matemática simples: o tempo que você gasta esgotado ou perdido não volta. 
+                        <br><br>
+                        O próximo passo não precisa ser grande. Precisa ser dado.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="cta-section" id="contato">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Vamos conversar sobre o seu momento?</h2>
+                    <p>Sessão de clareza gratuita de 30 minutos. Sem compromisso, sem vendas agressivas. Só para entender se faz sentido trabalharmos juntos.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida" class="btn btn-primary">
+                            Agendar sessão de clareza
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/5531924147491" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="cta-secondary-links">
+                        <a href="mailto:(EMAIL)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            Enviar e-mail
+                        </a>
+                        <button onclick="copyWhatsAppMessage()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            Copiar mensagem pronta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://www.nexoiatalentos.com.br" target="_blank" class="nav-logo">
+                        <div class="nav-logo-icon">
+                            <span class="circle circle-1"></span>
+                            <span class="circle circle-2"></span>
+                        </div>
+                        <div class="nav-logo-text">
+                            <span class="brand-name">NEXO <span class="ia">IA</span></span>
+                            <span class="brand-tagline">Talentos</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">"O futuro vai premiar quem souber humanizar a tecnologia."</p>
+                    <div class="footer-social" style="display: flex; gap: 16px; margin-top: 16px;">
+                        <a href="https://www.nexoiatalentos.com.br" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #64748b; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#0e7490'" onmouseout="this.style.color='#64748b'">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            Site
+                        </a>
+                        <a href="https://instagram.com/nexoiatalentos" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #64748b; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color='#64748b'">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                            @nexoiatalentos
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-legal">
+                    <p>IA responsável. Decisões humanas.</p>
+                    <p>Dados tratados conforme LGPD. Mentoria não substitui acompanhamento clínico.</p>
+                    <div class="footer-badges">
+                        <span class="footer-badge">LGPD</span>
+                        <span class="footer-badge">MEI Method</span>
+                        <span class="footer-badge">Confidencial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span id="toastMessage">Copiado!</span>
+    </div>
+
+    <script>
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Mobile Navigation
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isOpen = item.classList.contains('open');
+                
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+                
+                button.setAttribute('aria-expanded', !isOpen);
+            });
+        });
+
+        // Quiz Logic
+        let currentQuestion = 1;
+        const totalQuestions = 6;
+        const answers = {};
+
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.quiz-question');
+                const questionNum = parseInt(question.dataset.question);
+                
+                question.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                answers[questionNum] = this.dataset.value;
+                
+                setTimeout(() => {
+                    if (questionNum < totalQuestions) {
+                        goToQuestion(questionNum + 1);
+                    } else {
+                        showResult();
+                    }
+                }, 300);
+            });
+        });
+
+        function goToQuestion(num) {
+            document.querySelectorAll('.quiz-question').forEach(q => q.classList.remove('active'));
+            document.querySelector(`.quiz-question[data-question="${num}"]`).classList.add('active');
+            
+            document.querySelectorAll('.quiz-progress-step').forEach((step, i) => {
+                step.classList.toggle('active', i < num);
+            });
+            
+            currentQuestion = num;
+        }
+
+        function showResult() {
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.getElementById('quizResult').classList.add('active');
+            document.querySelector('.quiz-progress').style.display = 'none';
+            
+            // Analyze answers and generate recommendation
+            let trail = '';
+            let focus = '';
+            
+            // Count tendencies
+            const tendencies = {
+                vidaTrabalho: 0,
+                carreira: 0,
+                ia: 0
+            };
+            
+            // Question 1 analysis
+            if (answers[1] === 'energia') tendencies.vidaTrabalho += 2;
+            if (answers[1] === 'carreira') tendencies.carreira += 2;
+            if (answers[1] === 'produtividade') tendencies.ia += 2;
+            if (answers[1] === 'tudo') { tendencies.vidaTrabalho++; tendencies.carreira++; tendencies.ia++; }
+            
+            // Question 2 analysis
+            if (answers[2] === 'desequilibrio') tendencies.vidaTrabalho += 2;
+            if (answers[2] === 'estagnado') tendencies.carreira++;
+            if (answers[2] === 'transicao') tendencies.carreira += 2;
+            if (answers[2] === 'ok') tendencies.ia++;
+            
+            // Question 3 analysis
+            if (answers[3] === 'nunca' || answers[3] === 'basico') tendencies.ia++;
+            if (answers[3] === 'avancado') tendencies.ia += 2;
+            
+            // Question 4 analysis
+            if (answers[4] === 'clareza') tendencies.vidaTrabalho++;
+            if (answers[4] === 'posicionamento') tendencies.carreira += 2;
+            if (answers[4] === 'ferramentas') tendencies.ia += 2;
+            if (answers[4] === 'equilibrio') tendencies.vidaTrabalho += 2;
+            
+            // Question 6 analysis
+            if (answers[6] === 'profundidade') tendencies.vidaTrabalho += 2;
+            if (answers[6] === 'pratico') tendencies.ia++;
+            if (answers[6] === 'estrategico') tendencies.carreira++;
+            
+            // Determine primary trail
+            const maxTendency = Math.max(tendencies.vidaTrabalho, tendencies.carreira, tendencies.ia);
+            
+            if (tendencies.vidaTrabalho === maxTendency) {
+                trail = 'Trilha 1: Vida & Trabalho – Foco em recuperar energia, estabelecer limites e reconectar com o que importa. Vamos trabalhar clareza de valores e redesenho de rotina.';
+                focus = 'Nas primeiras 4 semanas: diagnóstico de drenos de energia, mapeamento de valores essenciais, primeiras mudanças de rotina e estabelecimento de limites saudáveis.';
+            } else if (tendencies.carreira === maxTendency) {
+                trail = 'Trilha 2: Carreira & Posicionamento – Foco em clareza de direção, narrativa profissional e visibilidade. Vamos construir seu posicionamento estratégico.';
+                focus = 'Nas primeiras 4 semanas: análise de trajetória, definição de proposta de valor, revisão de LinkedIn e início do dossiê de posicionamento.';
+            } else {
+                trail = 'Trilha 3: IA & ChatGPT na Prática – Foco em dominar ferramentas que multiplicam sua produtividade. Do básico ao avançado, com aplicação imediata.';
+                focus = 'Nas primeiras 4 semanas: fundamentos de prompts eficazes, criação do seu playbook pessoal, automação de tarefas repetitivas e primeiro agente funcional.';
+            }
+            
+            // Adjust based on time availability
+            if (answers[5] === 'pouco') {
+                focus += ' Como seu tempo é limitado, vamos priorizar as ações de maior impacto.';
+            } else if (answers[5] === 'intenso') {
+                focus += ' Com sua disponibilidade, podemos combinar elementos das outras trilhas também.';
+            }
+            
+            document.getElementById('resultTrail').textContent = trail;
+            document.getElementById('resultFocus').textContent = focus;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 1;
+            Object.keys(answers).forEach(key => delete answers[key]);
+            
+            document.getElementById('quizQuestions').style.display = 'block';
+            document.getElementById('quizResult').classList.remove('active');
+            document.querySelector('.quiz-progress').style.display = 'flex';
+            
+            document.querySelectorAll('.quiz-question').forEach(q => q.classList.remove('active'));
+            document.querySelector('.quiz-question[data-question="1"]').classList.add('active');
+            
+            document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+            
+            document.querySelectorAll('.quiz-progress-step').forEach((step, i) => {
+                step.classList.toggle('active', i === 0);
+            });
+        }
+
+        // Copy WhatsApp Message
+        function copyWhatsAppMessage() {
+            const message = `Oi! Vi a página da NEXO IA Talentos e tenho interesse nas mentorias.
+
+Gostaria de agendar uma sessão de clareza para entender melhor como funciona.
+
+Pode me passar os próximos passos?`;
+
+            navigator.clipboard.writeText(message).then(() => {
+                showToast('Mensagem copiada! Cole no WhatsApp.');
+            });
+        }
+
+        // Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('navLinks').classList.remove('open');
+                }
+            });
+        });
+    </script>
+
+    <!--
+    ============================================
+    COMO USAR / HOSTEAR ESTE ARQUIVO
+    ============================================
+    
+    1. GITHUB PAGES:
+       - Crie um novo repositório no GitHub
+       - Faça upload deste arquivo como "index.html"
+       - Vá em Settings > Pages
+       - Selecione a branch main e salve
+       - Seu site estará disponível em: username.github.io/nome-repo
+    
+    2. VERCEL:
+       - Acesse vercel.com e faça login
+       - Clique em "New Project"
+       - Faça upload deste arquivo ou conecte ao GitHub
+       - Deploy automático em segundos
+    
+    3. NETLIFY:
+       - Acesse netlify.com e faça login
+       - Arraste este arquivo para o dashboard
+       - Publicado instantaneamente com URL automática
+    
+    4. LOCALMENTE:
+       - Salve o arquivo com extensão .html
+       - Abra diretamente no navegador (duplo clique)
+    
+    ANTES DE PUBLICAR:
+    Substitua os placeholders pelos seus links reais:
+    - https://calendly.com/nexoiatalentos/diagnostico-mentorias-de-carreira-e-vida → seu link de agendamento
+    - https://wa.me/5531924147491 → wa.me/seu-numero
+    - (EMAIL) → seu email
+    ============================================
+    -->
+</body>
+</html>
