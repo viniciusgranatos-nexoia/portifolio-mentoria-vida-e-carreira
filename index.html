@@ -1130,6 +1130,246 @@
             border-radius: 50%;
         }
 
+        .mei-indicators-hint {
+            font-size: 0.75rem;
+            color: var(--color-text-subtle);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .mei-indicator-clickable {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            background: var(--color-bg-elevated);
+            border: 1px solid transparent;
+        }
+
+        .mei-indicator-clickable:hover {
+            background: var(--color-accent-muted);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .mei-indicator-arrow {
+            opacity: 0.5;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .mei-indicator-clickable:hover .mei-indicator-arrow {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+
+        /* Indicator Modals */
+        .indicator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 39, 68, 0.8);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 40px 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .indicator-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .indicator-modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            margin: auto;
+        }
+
+        .indicator-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: #f1f5f9;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            color: #64748b;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .indicator-modal-close:hover {
+            background: #e2e8f0;
+            color: #0f2744;
+        }
+
+        .indicator-modal-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 32px 32px 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .indicator-modal-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .indicator-modal-body {
+            padding: 24px 32px 32px;
+        }
+
+        .indicator-section {
+            margin-bottom: 24px;
+        }
+
+        .indicator-section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f2744;
+            margin-bottom: 8px;
+        }
+
+        .indicator-section p {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .indicator-section em {
+            color: #0e7490;
+            font-style: italic;
+        }
+
+        .indicator-signals, .indicator-work {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .indicator-signals li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            color: #475569;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .indicator-signals li:last-child {
+            border-bottom: none;
+        }
+
+        .indicator-signals li::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+        }
+
+        .indicator-work li {
+            padding: 10px 0 10px 28px;
+            position: relative;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .indicator-work li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .indicator-work li strong {
+            color: #0f2744;
+        }
+
+        .indicator-scale {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        .indicator-scale h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #0f2744;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .scale-bar {
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .scale-segment {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .scale-low {
+            background: #ef4444;
+        }
+
+        .scale-medium {
+            background: #f59e0b;
+        }
+
+        .scale-high {
+            background: #10b981;
+        }
+
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: #64748b;
+        }
+
+        .scale-labels span {
+            flex: 1;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Deliverables Section */
         .deliverables-grid {
             display: grid;
@@ -1176,6 +1416,57 @@
             font-size: 0.8125rem;
             color: var(--color-text-muted);
             line-height: 1.6;
+        }
+
+        .deliverable-highlight {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border-color: #8b5cf6;
+            position: relative;
+        }
+
+        .deliverable-highlight .deliverable-icon {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+
+        .deliverable-highlight .deliverable-icon svg {
+            color: white;
+        }
+
+        .deliverable-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #8b5cf6;
+            color: white;
+            font-size: 0.625rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .deliverable-clickable {
+            cursor: pointer;
+        }
+
+        .deliverable-clickable:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(14, 116, 144, 0.15);
+        }
+
+        .deliverable-hint {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .deliverable-clickable:hover .deliverable-hint {
+            opacity: 1;
         }
 
         /* Social Proof */
@@ -1502,6 +1793,19 @@
             padding: 6px 10px;
             border-radius: 4px;
             border: 1px solid var(--color-border);
+        }
+
+        .footer-badge-clickable {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .footer-badge-clickable:hover {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(14, 116, 144, 0.3);
         }
 
         /* Toast */
@@ -2096,22 +2400,27 @@
                         
                         <div class="mei-indicators">
                             <h4>Indicadores que acompanhamos (0-10)</h4>
+                            <p class="mei-indicators-hint">Clique para entender cada um</p>
                             <div class="mei-indicator-list">
-                                <div class="mei-indicator">
+                                <div class="mei-indicator mei-indicator-clickable" onclick="openModal('clarezaModal')">
                                     <span class="mei-indicator-dot"></span>
                                     Clareza
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="mei-indicator-arrow"><path d="M9 18l6-6-6-6"/></svg>
                                 </div>
-                                <div class="mei-indicator">
+                                <div class="mei-indicator mei-indicator-clickable" onclick="openModal('energiaModal')">
                                     <span class="mei-indicator-dot"></span>
                                     Energia
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="mei-indicator-arrow"><path d="M9 18l6-6-6-6"/></svg>
                                 </div>
-                                <div class="mei-indicator">
+                                <div class="mei-indicator mei-indicator-clickable" onclick="openModal('focoModal')">
                                     <span class="mei-indicator-dot"></span>
                                     Foco
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="mei-indicator-arrow"><path d="M9 18l6-6-6-6"/></svg>
                                 </div>
-                                <div class="mei-indicator">
+                                <div class="mei-indicator mei-indicator-clickable" onclick="openModal('progressoModal')">
                                     <span class="mei-indicator-dot"></span>
                                     Progresso
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="mei-indicator-arrow"><path d="M9 18l6-6-6-6"/></svg>
                                 </div>
                             </div>
                         </div>
@@ -2119,6 +2428,274 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal Clareza -->
+        <div id="clarezaModal" class="indicator-modal" onclick="if(event.target === this) closeModal('clarezaModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('clarezaModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #0e7490 0%, #22d3ee 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Clareza</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Saber o que você quer — e o que não quer mais</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>🎯 O que é</h3>
+                        <p>Clareza é a capacidade de responder com segurança: <em>"O que eu realmente quero?"</em> Não no nível superficial, mas no nível de valores, energia e direção de vida. É o oposto de estar no piloto automático ou tomando decisões por inércia.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que acompanhamos</h3>
+                        <p>Sem clareza, você gasta energia em coisas que não importam. Aceita oportunidades erradas. Diz sim quando deveria dizer não. A falta de clareza é a raiz de 80% do esgotamento e da insatisfação profissional.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🚨 Sinais de que está baixo (0-4)</h3>
+                        <ul class="indicator-signals">
+                            <li>Dificuldade de tomar decisões simples</li>
+                            <li>Sensação de "estar perdido" ou "não saber o que quer"</li>
+                            <li>Comparação constante com outras pessoas</li>
+                            <li>Aceitar qualquer coisa por medo de perder algo</li>
+                            <li>Acordar sem saber por que está fazendo o que faz</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🛠️ Como trabalhamos nas sessões</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Mapeamento de valores:</strong> Identificar o que realmente importa pra você</li>
+                            <li><strong>Auditoria de energia:</strong> O que drena vs. o que energiza</li>
+                            <li><strong>Exercícios de filosofia prática:</strong> Perguntas que revelam padrões ocultos</li>
+                            <li><strong>Cenários futuros:</strong> Visualização estruturada com IA</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-scale">
+                        <h4>Escala de Clareza</h4>
+                        <div class="scale-bar">
+                            <div class="scale-segment scale-low">0-3</div>
+                            <div class="scale-segment scale-medium">4-6</div>
+                            <div class="scale-segment scale-high">7-10</div>
+                        </div>
+                        <div class="scale-labels">
+                            <span>Confuso, perdido</span>
+                            <span>Tem ideias, mas dúvidas</span>
+                            <span>Sabe o que quer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Energia -->
+        <div id="energiaModal" class="indicator-modal" onclick="if(event.target === this) closeModal('energiaModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('energiaModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Energia</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">O combustível para agir — sem ele, nada acontece</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>⚡ O que é</h3>
+                        <p>Energia é sua capacidade de ação. Não é só física — é mental, emocional e motivacional. É o que te faz levantar e fazer acontecer, ou o que falta quando você sabe o que precisa fazer mas não consegue.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🎯 Por que acompanhamos</h3>
+                        <p>Você pode ter toda a clareza do mundo, mas sem energia, não executa. A energia é o recurso mais precioso e mais negligenciado. Gerenciar energia é mais importante que gerenciar tempo.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🚨 Sinais de que está baixo (0-4)</h3>
+                        <ul class="indicator-signals">
+                            <li>Cansaço constante, mesmo dormindo</li>
+                            <li>Procrastinação crônica</li>
+                            <li>Irritabilidade e baixa tolerância</li>
+                            <li>Dificuldade de começar tarefas simples</li>
+                            <li>Sensação de "arrastar" o dia</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🛠️ Como trabalhamos nas sessões</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Auditoria de drenos:</strong> Identificar o que está sugando sua energia</li>
+                            <li><strong>Mapa de fontes:</strong> Descobrir o que te recarrega de verdade</li>
+                            <li><strong>Redesenho de rotina:</strong> Estruturar o dia para proteger energia</li>
+                            <li><strong>Limites estratégicos:</strong> Aprender a dizer não sem culpa</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-scale">
+                        <h4>Escala de Energia</h4>
+                        <div class="scale-bar">
+                            <div class="scale-segment scale-low">0-3</div>
+                            <div class="scale-segment scale-medium">4-6</div>
+                            <div class="scale-segment scale-high">7-10</div>
+                        </div>
+                        <div class="scale-labels">
+                            <span>Esgotado, arrastando</span>
+                            <span>Funcional, mas cansado</span>
+                            <span>Energizado, disposto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Foco -->
+        <div id="focoModal" class="indicator-modal" onclick="if(event.target === this) closeModal('focoModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('focoModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Foco</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">A direção da sua energia — onde você coloca atenção</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>🎯 O que é</h3>
+                        <p>Foco é a capacidade de direcionar sua energia para o que importa, ignorando o ruído. Não é sobre fazer mais coisas — é sobre fazer as coisas certas. É a diferença entre estar ocupado e ser produtivo.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que acompanhamos</h3>
+                        <p>Vivemos na era da distração. Notificações, oportunidades, demandas de todos os lados. Sem foco, você dispersa energia em mil direções e não avança em nenhuma. Foco é o multiplicador de resultados.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🚨 Sinais de que está baixo (0-4)</h3>
+                        <ul class="indicator-signals">
+                            <li>Começar muitas coisas, terminar poucas</li>
+                            <li>Dificuldade de priorizar (tudo parece urgente)</li>
+                            <li>Mente "pulando" de assunto em assunto</li>
+                            <li>Sensação de estar sempre "apagando incêndio"</li>
+                            <li>Fim do dia sem saber o que realmente fez</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🛠️ Como trabalhamos nas sessões</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Matriz de priorização:</strong> Separar urgente de importante</li>
+                            <li><strong>Eliminação estratégica:</strong> Identificar o que parar de fazer</li>
+                            <li><strong>Blocos de foco:</strong> Estruturar tempo para trabalho profundo</li>
+                            <li><strong>Sistema de captura:</strong> Tirar coisas da cabeça com método</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-scale">
+                        <h4>Escala de Foco</h4>
+                        <div class="scale-bar">
+                            <div class="scale-segment scale-low">0-3</div>
+                            <div class="scale-segment scale-medium">4-6</div>
+                            <div class="scale-segment scale-high">7-10</div>
+                        </div>
+                        <div class="scale-labels">
+                            <span>Disperso, reativo</span>
+                            <span>Foco intermitente</span>
+                            <span>Direcionado, intencional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Progresso -->
+        <div id="progressoModal" class="indicator-modal" onclick="if(event.target === this) closeModal('progressoModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('progressoModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Progresso</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Movimento real — a diferença entre "ocupado" e "avançando"</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>📈 O que é</h3>
+                        <p>Progresso é movimento mensurável na direção certa. Não é estar ocupado — é estar avançando. É a sensação de que ontem você estava num lugar e hoje está mais perto de onde quer chegar.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que acompanhamos</h3>
+                        <p>Progresso gera motivação. Motivação gera mais progresso. É um ciclo virtuoso. Por outro lado, estagnação gera frustração, que gera mais estagnação. Medir progresso é sair do "achismo" e entrar na realidade.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🚨 Sinais de que está baixo (0-4)</h3>
+                        <ul class="indicator-signals">
+                            <li>Sensação de "rodar em círculos"</li>
+                            <li>Meses passam e nada muda de verdade</li>
+                            <li>Dificuldade de ver conquistas recentes</li>
+                            <li>Comparação dolorosa com onde "deveria estar"</li>
+                            <li>Desânimo ao pensar no futuro</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🛠️ Como trabalhamos nas sessões</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Metas com significado:</strong> Definir objetivos conectados a valores</li>
+                            <li><strong>Micro-vitórias:</strong> Quebrar grandes metas em passos visíveis</li>
+                            <li><strong>Check-ins estruturados:</strong> Ritual de revisão semanal</li>
+                            <li><strong>Celebração intencional:</strong> Reconhecer avanços (seu cérebro precisa disso)</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-scale">
+                        <h4>Escala de Progresso</h4>
+                        <div class="scale-bar">
+                            <div class="scale-segment scale-low">0-3</div>
+                            <div class="scale-segment scale-medium">4-6</div>
+                            <div class="scale-segment scale-high">7-10</div>
+                        </div>
+                        <div class="scale-labels">
+                            <span>Estagnado, travado</span>
+                            <span>Alguns avanços</span>
+                            <span>Momentum, avançando</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Packages Section -->
         <section id="pacotes">
@@ -2339,9 +2916,309 @@
                         <h4>Relatório de Progresso</h4>
                         <p>Evolução dos seus indicadores MEI ao longo do acompanhamento.</p>
                     </div>
+
+                    <div class="deliverable-item deliverable-highlight deliverable-clickable" onclick="openModal('discModal')">
+                        <div class="deliverable-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a10 10 0 0 1 0 20"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h4>Avaliação DISC Completa</h4>
+                        <p>Assessment comportamental com feedback personalizado e devolutiva detalhada. Compreender seu perfil DISC é divisor de águas para carreira, comunicação e liderança.</p>
+                        <span class="deliverable-badge">Diferencial</span>
+                        <span class="deliverable-hint">Clique para saber mais →</span>
+                    </div>
+
+                    <div class="deliverable-item deliverable-clickable" onclick="openModal('valoresModal')">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <h4>Mapa de Valores e Não-Negociáveis</h4>
+                        <p>Documento curto e direto com seus valores, limites e critérios de decisão. Serve para escolhas de carreira, conversas difíceis e evitar recaída em ambientes tóxicos.</p>
+                        <span class="deliverable-hint">Clique para saber mais →</span>
+                    </div>
+
+                    <div class="deliverable-item deliverable-clickable" onclick="openModal('pipelineModal')">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h4>Pipeline de Oportunidades</h4>
+                        <p>Plano de execução para gerar oportunidades: empresas-alvo, estratégia de networking, cadência de contato e próximos passos. Tira do "um dia eu me recoloco" e coloca no "está acontecendo".</p>
+                        <span class="deliverable-hint">Clique para saber mais →</span>
+                    </div>
+
+                    <div class="deliverable-item deliverable-clickable" onclick="openModal('playbookModal')">
+                        <div class="deliverable-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h4>Playbook de IA Responsável</h4>
+                        <p>Guia personalizado de como usar IA no trabalho e carreira: prompts críticos, templates, padrões de qualidade, checkpoints humanos e limites de privacidade. Ganho de tempo com governança.</p>
+                        <span class="deliverable-hint">Clique para saber mais →</span>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Modal DISC -->
+        <div id="discModal" class="indicator-modal" onclick="if(event.target === this) closeModal('discModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('discModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a10 10 0 0 1 0 20"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Avaliação DISC Completa</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">O mapa do seu comportamento — divisor de águas na carreira</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>🎯 O que é DISC</h3>
+                        <p>DISC é uma metodologia de análise comportamental que mapeia 4 dimensões do seu perfil: <strong>Dominância</strong> (como lida com desafios), <strong>Influência</strong> (como se relaciona), <strong>Estabilidade</strong> (como reage a mudanças) e <strong>Conformidade</strong> (como segue regras). Não é teste de personalidade — é um raio-x de como você age.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que é divisor de águas</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Autoconhecimento real:</strong> Entender seus padrões de comportamento sob pressão</li>
+                            <li><strong>Comunicação certeira:</strong> Saber adaptar sua comunicação ao perfil do outro</li>
+                            <li><strong>Decisões de carreira:</strong> Escolher funções alinhadas ao seu perfil natural</li>
+                            <li><strong>Liderança consciente:</strong> Conhecer seus pontos cegos como gestor</li>
+                            <li><strong>Relacionamentos:</strong> Reduzir conflitos ao entender diferenças comportamentais</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>📊 O que você recebe</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Assessment completo:</strong> Questionário validado com análise detalhada</li>
+                            <li><strong>Relatório individual:</strong> Seu perfil com gráficos e explicações</li>
+                            <li><strong>Devolutiva personalizada:</strong> Sessão dedicada para interpretar resultados</li>
+                            <li><strong>Aplicação prática:</strong> Como usar seu perfil em situações reais</li>
+                            <li><strong>Pontos de desenvolvimento:</strong> O que trabalhar para evoluir</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>💡 Exemplo prático</h3>
+                        <div style="background: #f8fafc; padding: 16px; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                            <p style="margin: 0; color: #475569; font-size: 0.9rem;"><em>"Descobri que meu perfil é alto D e baixo S — ou seja, sou direto e impaciente com detalhes. Isso explicava por que eu atropelava minha equipe sem perceber. Com essa consciência, ajustei minha comunicação e minha liderança melhorou 100%."</em></p>
+                            <p style="margin: 8px 0 0; color: #64748b; font-size: 0.8rem;">— Perfil típico de mentorado</p>
+                        </div>
+                    </div>
+
+                    <div class="indicator-scale" style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);">
+                        <h4>🔑 Insight</h4>
+                        <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">DISC não diz quem você é — diz <strong>como você tende a agir</strong>. E comportamento pode ser ajustado quando há consciência. Essa é a virada de chave.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Valores -->
+        <div id="valoresModal" class="indicator-modal" onclick="if(event.target === this) closeModal('valoresModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('valoresModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Mapa de Valores e Não-Negociáveis</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Sua bússola interna — para nunca mais se perder</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>🎯 O que é</h3>
+                        <p>Um documento curto e direto que mapeia o que realmente importa pra você. Não é lista genérica de valores corporativos — são <strong>seus</strong> valores, testados contra situações reais, junto com os limites que você não cruza mais.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que você precisa disso</h3>
+                        <ul class="indicator-signals">
+                            <li>Sem clareza de valores, qualquer proposta parece boa</li>
+                            <li>Você aceita coisas que drenam porque não sabe dizer não</li>
+                            <li>Recai em ambientes tóxicos porque não definiu seus limites</li>
+                            <li>Decisões de carreira viram roleta russa</li>
+                            <li>Conversas difíceis ficam mais difíceis sem critérios claros</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>📋 O que contém</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Top 5 valores:</strong> Os inegociáveis que guiam suas decisões</li>
+                            <li><strong>Não-negociáveis:</strong> Limites claros — o que você não aceita mais</li>
+                            <li><strong>Critérios de decisão:</strong> Filtros para avaliar oportunidades</li>
+                            <li><strong>Red flags:</strong> Sinais de alerta de ambientes incompatíveis</li>
+                            <li><strong>Frases de proteção:</strong> Scripts para defender seus limites</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🛠️ Como usamos nas sessões</h3>
+                        <p>Através de exercícios de filosofia prática e análise de experiências passadas, extraímos o que você realmente valoriza — não o que acha que deveria valorizar. É um processo de escavação, não de construção.</p>
+                    </div>
+
+                    <div class="indicator-scale" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);">
+                        <h4>💡 Uso prático</h4>
+                        <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">Recebeu uma proposta? Abra o documento. Avalie contra seus critérios. Decida com consciência, não com ansiedade. <strong>Esse é o poder de ter clareza.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Pipeline -->
+        <div id="pipelineModal" class="indicator-modal" onclick="if(event.target === this) closeModal('pipelineModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('pipelineModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Pipeline de Oportunidades</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Do "um dia eu me recoloco" para "está acontecendo"</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>🎯 O que é</h3>
+                        <p>Um plano de execução estruturado para gerar oportunidades de verdade. Não é só "atualizar o LinkedIn e esperar" — é um sistema com alvos, ações e cadência. Tira a recolocação do campo do desejo e coloca no campo da execução.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que funciona</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Foco direcionado:</strong> Em vez de atirar para todos os lados, você mira em alvos específicos</li>
+                            <li><strong>Ação consistente:</strong> Cadência definida evita o "mandei currículo e parei"</li>
+                            <li><strong>Networking estratégico:</strong> Quem você precisa conhecer e como chegar lá</li>
+                            <li><strong>Visibilidade organizada:</strong> Suas conversas, contatos e próximos passos em um lugar</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>📋 O que contém</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Lista de empresas-alvo:</strong> 15-30 empresas alinhadas ao seu perfil e valores</li>
+                            <li><strong>Mapa de contatos:</strong> Quem conhecer em cada empresa e como</li>
+                            <li><strong>Estratégia de networking:</strong> Eventos, LinkedIn, indicações — o que funciona pra você</li>
+                            <li><strong>Cadência de ações:</strong> Quantos contatos por semana, follow-ups, etc.</li>
+                            <li><strong>Tracker de conversas:</strong> Status de cada oportunidade em andamento</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>💡 Diferença na prática</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;">
+                            <div style="background: #fef2f2; padding: 12px; border-radius: 8px;">
+                                <strong style="color: #ef4444; font-size: 0.8rem;">❌ Sem Pipeline</strong>
+                                <p style="margin: 8px 0 0; font-size: 0.8rem; color: #475569;">"Mandei uns currículos, esperei, nada aconteceu, desanimei..."</p>
+                            </div>
+                            <div style="background: #d1fae5; padding: 12px; border-radius: 8px;">
+                                <strong style="color: #10b981; font-size: 0.8rem;">✅ Com Pipeline</strong>
+                                <p style="margin: 8px 0 0; font-size: 0.8rem; color: #475569;">"Tenho 12 conversas ativas, 3 em fase final, próxima ação definida pra cada uma."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="indicator-scale" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+                        <h4>🚀 Resultado</h4>
+                        <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">Recolocação deixa de ser "sorte" e vira <strong>processo gerenciável</strong>. Você sabe exatamente onde está e o que fazer amanhã.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Playbook IA -->
+        <div id="playbookModal" class="indicator-modal" onclick="if(event.target === this) closeModal('playbookModal')">
+            <div class="indicator-modal-content">
+                <button class="indicator-modal-close" onclick="closeModal('playbookModal')">&times;</button>
+                
+                <div class="indicator-modal-header">
+                    <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #0e7490 0%, #22d3ee 100%);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0; color: #0f2744;">Playbook de IA Responsável</h2>
+                        <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Ganho de tempo com governança — sem virar bagunça</p>
+                    </div>
+                </div>
+
+                <div class="indicator-modal-body">
+                    <div class="indicator-section">
+                        <h3>🎯 O que é</h3>
+                        <p>Um guia personalizado de como <strong>você</strong> usa IA no trabalho e na carreira. Não é curso genérico de ChatGPT — é um sistema montado para sua realidade, com prompts críticos, templates e limites claros de privacidade e qualidade.</p>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>⚡ Por que você precisa disso</h3>
+                        <ul class="indicator-signals">
+                            <li>Sem estrutura, IA vira perda de tempo (ou pior, gera retrabalho)</li>
+                            <li>Prompts genéricos dão resultados genéricos</li>
+                            <li>Risco de privacidade: jogar dados sensíveis sem critério</li>
+                            <li>Sem checkpoints humanos, qualidade despenca</li>
+                            <li>Todo mundo usa IA — poucos usam com estratégia</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>📋 O que contém</h3>
+                        <ul class="indicator-work">
+                            <li><strong>Prompts críticos:</strong> Os 10-15 prompts que você vai usar toda semana</li>
+                            <li><strong>Templates de output:</strong> Formatos padronizados para suas entregas</li>
+                            <li><strong>Padrões de qualidade:</strong> Checklist do que revisar antes de usar</li>
+                            <li><strong>Checkpoints humanos:</strong> Onde a IA para e você entra</li>
+                            <li><strong>Limites de privacidade:</strong> O que nunca colocar em IA pública</li>
+                            <li><strong>Fluxos de trabalho:</strong> Processos integrados com IA</li>
+                        </ul>
+                    </div>
+
+                    <div class="indicator-section">
+                        <h3>🛡️ Governança na prática</h3>
+                        <div style="background: #f8fafc; padding: 16px; border-radius: 8px; border-left: 4px solid #0e7490;">
+                            <p style="margin: 0; color: #475569; font-size: 0.9rem;"><strong>Exemplo:</strong> Você pode usar IA para rascunhar uma proposta comercial, mas o checkpoint define: "Antes de enviar, revisar dados do cliente, tom de voz e valores citados". Isso é IA <em>com</em> governança — produtividade sem risco.</p>
+                        </div>
+                    </div>
+
+                    <div class="indicator-scale" style="background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);">
+                        <h4>💡 Diferencial</h4>
+                        <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">Não é sobre usar mais IA — é sobre usar <strong>melhor</strong>. Com critério, consistência e consciência dos limites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Proof Section -->
         <section class="proof-section" id="provas">
@@ -2353,7 +3230,7 @@
 
                 <div class="proof-grid">
                     <div class="case-card">
-                        <span class="case-label">Exemplo ilustrativo</span>
+                        <span class="case-label">Caso Real • Cliente Confidencial</span>
                         <h4>Gerente em transição de carreira</h4>
                         <p>Chegou esgotado após 12 anos na mesma empresa, sem saber se queria continuar na área. Em 8 semanas, mapeou seus valores, reconstruiu a narrativa profissional e fez uma transição para uma startup com 40% de aumento.</p>
                         <div class="case-outcome">
@@ -2363,7 +3240,7 @@
                     </div>
 
                     <div class="case-card">
-                        <span class="case-label">Exemplo ilustrativo</span>
+                        <span class="case-label">Caso Real • Cliente Confidencial</span>
                         <h4>Profissional autônoma em sobrecarga</h4>
                         <p>Trabalhava 60h/semana, sem tempo para família e com energia no limite. Usou o MEI para redesenhar rotina, estabelecer limites com clientes e automatizar tarefas com IA. Reduziu carga para 40h mantendo faturamento.</p>
                         <div class="case-outcome">
@@ -2579,14 +3456,190 @@
                     <p>IA responsável. Decisões humanas.</p>
                     <p>Dados tratados conforme LGPD. Mentoria não substitui acompanhamento clínico.</p>
                     <div class="footer-badges">
-                        <span class="footer-badge">LGPD</span>
-                        <span class="footer-badge">MEI Method</span>
-                        <span class="footer-badge">Confidencial</span>
+                        <span class="footer-badge footer-badge-clickable" onclick="openModal('lgpdMentoriaModal')">LGPD</span>
+                        <span class="footer-badge footer-badge-clickable" onclick="openModal('meiMethodModal')">MEI Method</span>
+                        <span class="footer-badge footer-badge-clickable" onclick="openModal('confidencialModal')">Confidencial</span>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modal LGPD Mentoria -->
+    <div id="lgpdMentoriaModal" class="indicator-modal" onclick="if(event.target === this) closeModal('lgpdMentoriaModal')">
+        <div class="indicator-modal-content">
+            <button class="indicator-modal-close" onclick="closeModal('lgpdMentoriaModal')">&times;</button>
+            
+            <div class="indicator-modal-header">
+                <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #0e7490 0%, #0891b2 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <div>
+                    <h2 style="margin: 0; color: #0f2744;">LGPD</h2>
+                    <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Lei Geral de Proteção de Dados — Seus dados protegidos</p>
+                </div>
+            </div>
+
+            <div class="indicator-modal-body">
+                <div class="indicator-section">
+                    <h3>🔐 O que é</h3>
+                    <p>A LGPD (Lei nº 13.709/2018) é a legislação brasileira que protege seus dados pessoais. Ela garante que você saiba como suas informações são coletadas, usadas e armazenadas — e que você tenha controle sobre elas.</p>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>🎯 Por que isso importa na mentoria</h3>
+                    <p>Durante nossas sessões, você compartilha informações pessoais e profissionais sensíveis. A LGPD garante que esses dados sejam tratados com responsabilidade, transparência e segurança — como deve ser numa relação de confiança.</p>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>🛡️ Como protegemos seus dados</h3>
+                    <ul class="indicator-work">
+                        <li><strong>Consentimento claro:</strong> Você sabe exatamente o que será coletado e para quê</li>
+                        <li><strong>Minimização:</strong> Coletamos apenas o necessário para o processo</li>
+                        <li><strong>Segurança:</strong> Gravações e anotações armazenadas com criptografia</li>
+                        <li><strong>Prazo definido:</strong> Dados excluídos após período acordado</li>
+                        <li><strong>Sem compartilhamento:</strong> Suas informações nunca são vendidas ou repassadas</li>
+                    </ul>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>✅ Seus direitos garantidos</h3>
+                    <ul class="indicator-work">
+                        <li><strong>Acesso:</strong> Saber quais dados tenho sobre você</li>
+                        <li><strong>Correção:</strong> Atualizar informações incorretas</li>
+                        <li><strong>Exclusão:</strong> Solicitar remoção dos seus dados</li>
+                        <li><strong>Portabilidade:</strong> Receber seus dados em formato utilizável</li>
+                    </ul>
+                </div>
+
+                <div class="indicator-scale" style="background: linear-gradient(135deg, #ecfeff 0%, #f0fdfa 100%);">
+                    <h4>💬 Na prática</h4>
+                    <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">Antes de começarmos, você recebe um termo claro explicando tudo. A qualquer momento, pode pedir acesso ou exclusão dos seus dados. Simples assim.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal MEI Method -->
+    <div id="meiMethodModal" class="indicator-modal" onclick="if(event.target === this) closeModal('meiMethodModal')">
+        <div class="indicator-modal-content">
+            <button class="indicator-modal-close" onclick="closeModal('meiMethodModal')">&times;</button>
+            
+            <div class="indicator-modal-header">
+                <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #0e7490 0%, #22d3ee 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </div>
+                <div>
+                    <h2 style="margin: 0; color: #0f2744;">MEI Method</h2>
+                    <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Clareza → Hábitos → Execução</p>
+                </div>
+            </div>
+
+            <div class="indicator-modal-body">
+                <div class="indicator-section">
+                    <h3>🎯 O que é</h3>
+                    <p>O Método MEI é a estrutura que guia todo o processo de mentoria. Não é coaching motivacional nem terapia — é um sistema prático que combina psicologia, filosofia do autoconhecimento e ferramentas de IA para gerar mudança real.</p>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>🔄 As 3 camadas do método</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 12px;">
+                        <div style="background: #ecfeff; padding: 16px; border-radius: 8px; border-left: 4px solid #0e7490;">
+                            <strong style="color: #0e7490;">1. Clareza (M — Mapeamento)</strong>
+                            <p style="margin: 8px 0 0; font-size: 0.9rem; color: #475569;">Entender onde você está, o que quer de verdade e o que está te travando. Sem clareza, qualquer direção parece certa — e nenhuma é.</p>
+                        </div>
+                        <div style="background: #fef3c7; padding: 16px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                            <strong style="color: #b45309;">2. Hábitos (E — Estruturação)</strong>
+                            <p style="margin: 8px 0 0; font-size: 0.9rem; color: #475569;">Construir rotinas e sistemas que sustentam seus objetivos. Motivação acaba; hábitos permanecem.</p>
+                        </div>
+                        <div style="background: #d1fae5; padding: 16px; border-radius: 8px; border-left: 4px solid #10b981;">
+                            <strong style="color: #047857;">3. Execução (I — Implementação)</strong>
+                            <p style="margin: 8px 0 0; font-size: 0.9rem; color: #475569;">Transformar intenção em ação. Com acompanhamento, ajustes e responsabilização. Aqui é onde a mudança acontece.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>⚡ Por que funciona</h3>
+                    <ul class="indicator-work">
+                        <li><strong>Sequência lógica:</strong> Não adianta executar sem clareza nem ter clareza sem ação</li>
+                        <li><strong>Personalizado:</strong> Cada pessoa entra no método onde mais precisa</li>
+                        <li><strong>Mensurável:</strong> Indicadores de 0-10 para acompanhar progresso real</li>
+                        <li><strong>Prático:</strong> Ferramentas de IA aceleram diagnósticos e planos de ação</li>
+                    </ul>
+                </div>
+
+                <div class="indicator-scale" style="background: linear-gradient(135deg, #ecfeff 0%, #f0fdfa 100%);">
+                    <h4>💡 Diferencial</h4>
+                    <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">O MEI integra <strong>psicologia</strong> (entender padrões), <strong>filosofia</strong> (questionar propósito) e <strong>IA</strong> (acelerar aplicação). Não é papo — é método.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confidencial -->
+    <div id="confidencialModal" class="indicator-modal" onclick="if(event.target === this) closeModal('confidencialModal')">
+        <div class="indicator-modal-content">
+            <button class="indicator-modal-close" onclick="closeModal('confidencialModal')">&times;</button>
+            
+            <div class="indicator-modal-header">
+                <div class="indicator-modal-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <div>
+                    <h2 style="margin: 0; color: #0f2744;">Confidencial</h2>
+                    <p style="margin: 4px 0 0; color: #64748b; font-size: 14px;">Sigilo absoluto — o que é dito aqui, fica aqui</p>
+                </div>
+            </div>
+
+            <div class="indicator-modal-body">
+                <div class="indicator-section">
+                    <h3>🔒 O que significa</h3>
+                    <p>Confidencialidade é o pilar fundamental de qualquer processo de mentoria. Significa que tudo o que você compartilha nas sessões — medos, dúvidas, situações profissionais, dilemas pessoais — permanece em sigilo absoluto.</p>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>🎯 Por que isso importa</h3>
+                    <p>Sem segurança, não há abertura. Sem abertura, não há profundidade. Sem profundidade, não há transformação real. O sigilo é o que permite que você seja completamente honesto — consigo mesmo e comigo.</p>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>🛡️ O que está protegido</h3>
+                    <ul class="indicator-work">
+                        <li><strong>Conteúdo das sessões:</strong> Tudo o que conversamos</li>
+                        <li><strong>Materiais produzidos:</strong> Diagnósticos, planos, reflexões</li>
+                        <li><strong>Sua participação:</strong> Ninguém saberá que você é mentorado (se preferir)</li>
+                        <li><strong>Situações profissionais:</strong> Conflitos, decisões, transições</li>
+                        <li><strong>Questões pessoais:</strong> Relacionamentos, saúde, finanças</li>
+                    </ul>
+                </div>
+
+                <div class="indicator-section">
+                    <h3>⚠️ Exceções (raras e éticas)</h3>
+                    <ul class="indicator-signals">
+                        <li>Risco iminente de vida (sua ou de terceiros)</li>
+                        <li>Determinação judicial (obrigação legal)</li>
+                        <li>Autorização expressa sua para compartilhar algo específico</li>
+                    </ul>
+                </div>
+
+                <div class="indicator-scale" style="background: linear-gradient(135deg, #ede9fe 0%, #f3e8ff 100%);">
+                    <h4>🤝 Meu compromisso</h4>
+                    <p style="text-align: center; color: #475569; font-size: 0.9rem; margin: 0;">Como psicólogo, sigo o código de ética profissional. Confidencialidade não é só uma promessa — é uma obrigação ética e legal que levo a sério.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast -->
     <div class="toast" id="toast">
@@ -2597,6 +3650,27 @@
     </div>
 
     <script>
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.indicator-modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
         // Scroll to Custom Journey Section
         function scrollToCustomJourney() {
             const section = document.getElementById('jornada-personalizada');
