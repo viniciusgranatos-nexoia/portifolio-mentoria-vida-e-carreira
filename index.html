@@ -518,6 +518,90 @@
             border-radius: 100px;
         }
 
+        /* Custom Journey Section */
+        .custom-journey-section {
+            padding: 60px 0;
+            background: var(--color-bg);
+        }
+
+        .custom-journey-box {
+            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, var(--color-bg) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .custom-journey-label {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        .custom-journey-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-text);
+            margin-bottom: 16px;
+        }
+
+        .custom-journey-content > p {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .custom-journey-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .custom-journey-form textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            background: var(--color-bg);
+            resize: vertical;
+            min-height: 120px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .custom-journey-form textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px var(--color-accent-muted);
+        }
+
+        .custom-journey-form textarea::placeholder {
+            color: var(--color-text-subtle);
+        }
+
+        .custom-journey-form .btn {
+            align-self: center;
+        }
+
+        .custom-journey-note {
+            font-size: 0.875rem;
+            color: var(--color-text-subtle);
+            margin-top: 16px;
+        }
+
         /* Quiz Section */
         .quiz-section {
             background: var(--color-bg-elevated);
@@ -718,6 +802,29 @@
 
         .quiz-restart:hover {
             color: var(--color-text);
+        }
+
+        .quiz-escape {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-border-subtle);
+        }
+
+        .quiz-escape p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .quiz-escape a {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .quiz-escape a:hover {
+            color: var(--color-accent-hover);
+            text-decoration: underline;
         }
 
         /* Packages Section */
@@ -1709,6 +1816,29 @@
             </div>
         </section>
 
+        <!-- Jornada Personalizada Section -->
+        <section class="custom-journey-section" id="jornada-personalizada">
+            <div class="container">
+                <div class="custom-journey-box">
+                    <div class="custom-journey-content">
+                        <span class="custom-journey-label">✦ Para demandas únicas</span>
+                        <h3>Sua história não cabe em caixas?</h3>
+                        <p>Às vezes a demanda não se encaixa em trilhas prontas. Pode ser uma transição complexa, uma crise de sentido, um momento de reinvenção que mistura vida e carreira. Aqui a gente parte da sua história real — com base em psicologia, filosofia do autoconhecimento e ferramentas de IA — para desenhar um processo que faça sentido pra você.</p>
+                        <div class="custom-journey-form">
+                            <textarea id="customDemand" placeholder="Me conta um pouco sobre o que você está vivendo ou buscando... (transição de carreira, momento de vida, dúvidas sobre direção, algo específico com IA, ou qualquer outra coisa)" rows="4"></textarea>
+                            <button class="btn btn-primary" onclick="sendCustomDemand()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                                </svg>
+                                Enviar pelo WhatsApp
+                            </button>
+                        </div>
+                        <p class="custom-journey-note">Sua mensagem vai direto pro meu WhatsApp. Respondo pessoalmente em até 24h.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Quiz Section -->
         <section class="quiz-section" id="triagem">
             <div class="container">
@@ -1892,6 +2022,10 @@
                         </a>
                         
                         <button class="quiz-restart" onclick="restartQuiz()">Refazer triagem</button>
+
+                        <div class="quiz-escape">
+                            <p>Não se identificou com a recomendação? <a href="#jornada-personalizada" onclick="scrollToCustomJourney()">Conte sua história</a> e criamos algo sob medida.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1992,7 +2126,7 @@
                 <div class="section-header center">
                     <span class="section-label">Pacotes</span>
                     <h2 class="section-title">Escolha a intensidade do acompanhamento</h2>
-                    <p class="section-subtitle">Todos os pacotes incluem acesso às 3 trilhas. A diferença está na profundidade e frequência.</p>
+                    <p class="section-subtitle">Todos os pacotes incluem acesso às 3 trilhas. A diferença está na profundidade e frequência. <br><a href="#jornada-personalizada" onclick="scrollToCustomJourney()" style="color: var(--color-accent); text-decoration: none; font-weight: 600;">Precisa de algo diferente? Criamos sob medida →</a></p>
                 </div>
 
                 <div class="packages-grid">
@@ -2002,8 +2136,7 @@
                             <h3 class="package-name">Essencial</h3>
                             <p class="package-sessions">4 sessões · ~1 mês</p>
                             <div class="package-price">
-                                <strong>[VALOR]</strong>
-                                <span>ou [X]x de [Y]</span>
+                                <strong>Sob consulta</strong>
                             </div>
                         </div>
                         <p class="package-desc">Para quem quer um pontapé inicial estruturado. Ideal para uma questão específica ou diagnóstico.</p>
@@ -2040,8 +2173,7 @@
                             <h3 class="package-name">Intensivo</h3>
                             <p class="package-sessions">8 sessões · ~2 meses</p>
                             <div class="package-price">
-                                <strong>[VALOR]</strong>
-                                <span>ou [X]x de [Y]</span>
+                                <strong>Sob consulta</strong>
                             </div>
                         </div>
                         <p class="package-desc">Para quem quer uma transformação real. Tempo suficiente para criar novos padrões e ver resultados.</p>
@@ -2082,8 +2214,7 @@
                             <h3 class="package-name">Acompanhamento</h3>
                             <p class="package-sessions">12 sessões · ~3 meses</p>
                             <div class="package-price">
-                                <strong>[VALOR]</strong>
-                                <span>ou [X]x de [Y]</span>
+                                <strong>Sob consulta</strong>
                             </div>
                         </div>
                         <p class="package-desc">Para quem quer profundidade e sustentabilidade. Mudança de padrões de longo prazo.</p>
@@ -2242,23 +2373,6 @@
                     </div>
                 </div>
 
-                <div class="testimonials">
-                    <h3>O que dizem sobre o processo</h3>
-                    <div class="testimonial-grid">
-                        <div class="testimonial-card">
-                            <blockquote>"[Depoimento placeholder – a ser substituído por depoimento real com autorização]"</blockquote>
-                            <p class="testimonial-author">— [Nome], [Cargo/Contexto]</p>
-                        </div>
-                        <div class="testimonial-card">
-                            <blockquote>"[Depoimento placeholder – a ser substituído por depoimento real com autorização]"</blockquote>
-                            <p class="testimonial-author">— [Nome], [Cargo/Contexto]</p>
-                        </div>
-                        <div class="testimonial-card">
-                            <blockquote>"[Depoimento placeholder – a ser substituído por depoimento real com autorização]"</blockquote>
-                            <p class="testimonial-author">— [Nome], [Cargo/Contexto]</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -2483,6 +2597,45 @@
     </div>
 
     <script>
+        // Scroll to Custom Journey Section
+        function scrollToCustomJourney() {
+            const section = document.getElementById('jornada-personalizada');
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Focus no textarea após o scroll
+                setTimeout(() => {
+                    document.getElementById('customDemand').focus();
+                }, 800);
+            }
+        }
+
+        // Send Custom Demand via WhatsApp
+        function sendCustomDemand() {
+            const textarea = document.getElementById('customDemand');
+            const demand = textarea.value.trim();
+            
+            if (!demand) {
+                textarea.style.borderColor = '#ef4444';
+                textarea.placeholder = 'Por favor, conte um pouco sobre sua situação antes de enviar...';
+                textarea.focus();
+                setTimeout(() => {
+                    textarea.style.borderColor = '';
+                    textarea.placeholder = 'Me conta um pouco sobre o que você está vivendo ou buscando... (transição de carreira, momento de vida, dúvidas sobre direção, algo específico com IA, ou qualquer outra coisa)';
+                }, 3000);
+                return;
+            }
+            
+            const message = `Olá! Vim pelo site de Mentorias e gostaria de uma jornada personalizada.
+
+Minha situação:
+${demand}
+
+Gostaria de entender como podemos trabalhar juntos.`;
+            
+            const whatsappUrl = `https://wa.me/5531924147491?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
         // Progress Bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
